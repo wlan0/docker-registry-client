@@ -1,0 +1,150 @@
+{
+    "num_results": 18,
+    "query": "cattle",
+    "results": [
+        {
+            "description": "",
+            "is_automated": true,
+            "is_official": false,
+            "is_trusted": true,
+            "name": "ibuildthecloud/cattle-auto",
+            "star_count": 0
+        },
+        {
+            "description": "Installation of @ibuildthecloud 's cattle client. The framework managing stampede.io\n",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "faye/cattle",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "grayindustries/cattle",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/libvirt",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/stampede",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/server",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/agent",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/agent-instance",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/stampede-server",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/stampede-agent",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/agent-server",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/process-server",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/api-server",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/stampede-wrapper",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/test-agent",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/stampede-node",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/test",
+            "star_count": 0
+        },
+        {
+            "description": "",
+            "is_automated": false,
+            "is_official": false,
+            "is_trusted": false,
+            "name": "cattle/agent-register",
+            "star_count": 0
+        }
+    ]
+}
