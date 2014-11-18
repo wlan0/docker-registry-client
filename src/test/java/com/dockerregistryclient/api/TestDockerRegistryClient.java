@@ -2,10 +2,6 @@ package com.dockerregistryclient.api;
 
 import java.io.IOException;
 
-import javax.ws.rs.core.MultivaluedMap;
-
-import org.mockito.ArgumentCaptor;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.testng.Assert;
