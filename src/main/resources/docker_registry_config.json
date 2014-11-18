@@ -1,3 +1,5 @@
 {
-	"default.base_url" : "https://registry.hub.docker.com/"
+	"default.base_url" : "https://registry.hub.docker.com/",
+	"default.user_name" : "sample_uname",
+	"default.password" : "sample_password"
 }

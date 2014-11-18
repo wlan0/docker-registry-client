@@ -1,5 +1,6 @@
 package com.dockerregistryclient.module;
 
+import org.apache.commons.lang3.StringUtils;
 import org.codehaus.jackson.jaxrs.JacksonJsonProvider;
 
 import com.dockerregistryclient.api.DockerRegistryClient;
@@ -9,6 +10,7 @@ import com.google.inject.Provider;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
+import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 
 public class DockerRegistryClientProvider implements Provider<DockerRegistryClient> {
 
@@ -25,6 +27,11 @@ public class DockerRegistryClientProvider implements Provider<DockerRegistryClie
 
     @Inject
     public DockerRegistryClientProvider (DockerRegistryConfig config) {
+        String userName = config.get("default.user_name");
+        String password = config.get("default.password");
+        if (StringUtils.isNotEmpty(userName) && StringUtils.isNotEmpty(password)) {
+            client.addFilter(new HTTPBasicAuthFilter(userName, password));
+        }
         docker = new DockerRegistryClient(client, config);
     }
 
