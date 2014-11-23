@@ -1,6 +1,7 @@
 package com.dockerregistryclient.api;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.ws.rs.core.MultivaluedMap;
 
@@ -27,7 +28,7 @@ public class DockerRegistryClient extends AbstractDockerRegistryClient implement
             throw new IOException("empty query");
         }
         MultivaluedMap<String, String> searchTermMap = new MultivaluedMapImpl();
-        searchTermMap.add("q", query);
+        searchTermMap.add("q", URLEncoder.encode(query, "UTF-8"));
         return getResponse(searchPath, searchTermMap, null, DockerRegistrySearchResponse.class);
     }
 
