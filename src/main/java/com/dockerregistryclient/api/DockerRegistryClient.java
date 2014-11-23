@@ -26,11 +26,11 @@ import com.sun.jersey.core.util.MultivaluedMapImpl;
 public class DockerRegistryClient extends AbstractDockerRegistryClient
 		implements DockerRegistryClientIF {
 
-	private static final String searchPath = "search";
-	private static final String ancestryPrefixPath = "images/";
-	private static final String ancestrySuffixPath = "/ancestry";
-	private static final String repositoriesPrefixPath = "repository/";
-	private static final String repositoriesSuffixPath = "/images";
+    private static final String searchPath = "search";
+    private static final String ancestryPrefixPath = "images/";
+    private static final String ancestrySuffixPath = "/ancestry";
+    private static final String repositoriesPrefixPath = "repositories/";
+    private static final String repositoriesSuffixPath = "/images";
 
 	private static final String registryHeaderPath = "X-Docker-Endpoints";
 	private static final String registryTokenPath = "X-Docker-Token";
