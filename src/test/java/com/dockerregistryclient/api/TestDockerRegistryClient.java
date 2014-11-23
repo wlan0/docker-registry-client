@@ -46,4 +46,9 @@ public class TestDockerRegistryClient {
         Assert.assertEquals(searchResponse.getQuery(), "cattle");
         Assert.assertEquals(searchResponse.getNumResults(), new Integer(18));
     }
+    
+    @Test
+    public void testDockerRegistryImageAncestry () throws IOException {
+        
+    }
 }

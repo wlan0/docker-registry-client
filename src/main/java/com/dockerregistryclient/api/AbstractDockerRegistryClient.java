@@ -8,6 +8,7 @@ import javax.ws.rs.core.MultivaluedMap;
 
 import org.apache.commons.lang3.StringUtils;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.type.TypeReference;
 
 import com.dockerregistryclient.config.DockerRegistryConfig;
 import com.sun.jersey.api.client.Client;
@@ -37,9 +38,38 @@ public abstract class AbstractDockerRegistryClient implements DockerRegistryClie
         return getResponse(path, queryParams, headers, Map.class);
     }
 
-    protected <T> T getResponse (String path, MultivaluedMap<String, String> queryParams,
+    protected <T> T getResponse (String path, MultivaluedMap<String, String> queryParams, Map<String, Object> headers,
+        Class<T> type) throws IOException {
+        return getResponse(baseUrl, path, queryParams, headers, type);
+    }
+
+    protected <T> T getResponse (String path, MultivaluedMap<String, String> queryParams, Map<String, Object> headers,
+        TypeReference<T> type) throws IOException {
+        return getResponse(baseUrl, path, queryParams, headers, type);
+    }
+
+    protected <T> T getResponse (String endpoint, String path, MultivaluedMap<String, String> queryParams,
+        Map<String, Object> headers, TypeReference<T> type) throws IOException {
+        ClientResponse response = getClientResponse(endpoint, path, queryParams, headers);
+        T responseObject = mapper.readValue(response.getEntityInputStream(), type);
+        return responseObject;
+    }
+
+    protected <T> T getResponse (String endpoint, String path, MultivaluedMap<String, String> queryParams,
         Map<String, Object> headers, Class<T> type) throws IOException {
-        if (StringUtils.isEmpty(baseUrl)) {
+        ClientResponse response = getClientResponse(endpoint, path, queryParams, headers);
+        T responseObject = mapper.readValue(response.getEntityInputStream(), type);
+        return responseObject;
+    }
+
+    protected ClientResponse getClientResponse (String path, MultivaluedMap<String, String> queryParams,
+        Map<String, Object> headers) throws IOException {
+        return getClientResponse(baseUrl, path, queryParams, headers);
+    }
+
+    protected ClientResponse getClientResponse (String endpoint, String path,
+        MultivaluedMap<String, String> queryParams, Map<String, Object> headers) throws IOException {
+        if (StringUtils.isEmpty(endpoint)) {
             throw new IOException("base url is empty!!");
         }
         if (path == null) {
@@ -60,8 +90,6 @@ public abstract class AbstractDockerRegistryClient implements DockerRegistryClie
             throw new IOException("got a non-200 response from client, status = "
                 + Integer.toString(response.getStatus()));
         }
-        T responseObject = mapper.readValue(response.getEntityInputStream(), type);
-        return responseObject;
-
+        return response;
     }
 }
