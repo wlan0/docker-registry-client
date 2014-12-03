@@ -20,7 +20,7 @@ import com.sun.jersey.core.util.MultivaluedMapImpl;
 public abstract class AbstractDockerRegistryClient implements DockerRegistryClientIF {
 
     private static final ObjectMapper mapper = new ObjectMapper();
-    // setting this through the constructor, rather than a private static make
+    // setting this through the constructor, rather than a private static, makes
     // it easier to test (by mocking out client)
     private final Client client;
     private final String baseUrl;
@@ -92,4 +92,5 @@ public abstract class AbstractDockerRegistryClient implements DockerRegistryClie
         }
         return response;
     }
+
 }

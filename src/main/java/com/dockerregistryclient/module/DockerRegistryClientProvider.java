@@ -18,6 +18,7 @@ public class DockerRegistryClientProvider implements Provider<DockerRegistryClie
         cc.getClasses().add(JacksonJsonProvider.class);
         cc.getProperties().put(ClientConfig.PROPERTY_READ_TIMEOUT, 500);
         cc.getProperties().put(ClientConfig.PROPERTY_CONNECT_TIMEOUT, 500);
+        cc.getProperties().put(ClientConfig.PROPERTY_FOLLOW_REDIRECTS, true);
         client = Client.create(cc);
     }
 
