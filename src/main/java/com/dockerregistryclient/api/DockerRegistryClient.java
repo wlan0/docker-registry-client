@@ -62,7 +62,7 @@ public class DockerRegistryClient extends AbstractDockerRegistryClient
 					createBasicAuth(context.getUserName(),
 							context.getPassword()));
 		}
-		headers.put(registryTokenPath, "true");
+		headers.put(registryTokenPath, true);
 		String tokenPath = repositoriesPrefixPath + context.getNamespace()
 				+ "/" + context.getRepository() + repositoriesSuffixPath;
 		ClientResponse response = getClientResponse(tokenPath, null, headers);
@@ -89,7 +89,7 @@ public class DockerRegistryClient extends AbstractDockerRegistryClient
 					createBasicAuth(context.getUserName(),
 							context.getPassword()));
 		}
-		headers.put(registryTokenPath, "true");
+		headers.put(registryTokenPath, true);
 		String tokenPath = repositoriesPrefixPath + context.getNamespace()
 				+ "/" + context.getRepository() + repositoriesSuffixPath;
 		ClientResponse response = getClientResponse(tokenPath, null, headers);
