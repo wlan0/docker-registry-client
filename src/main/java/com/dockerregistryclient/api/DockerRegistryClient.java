@@ -25,11 +25,11 @@ import com.sun.jersey.core.util.MultivaluedMapImpl;
 public class DockerRegistryClient extends AbstractDockerRegistryClient
 		implements DockerRegistryClientIF {
 
-    private static final String searchPath = "search";
-    private static final String ancestryPrefixPath = "images/";
-    private static final String ancestrySuffixPath = "/ancestry";
-    private static final String repositoriesPrefixPath = "repositories/";
-    private static final String repositoriesSuffixPath = "/images";
+	private static final String searchPath = "search";
+	private static final String ancestryPrefixPath = "images/";
+	private static final String ancestrySuffixPath = "/ancestry";
+	private static final String repositoriesPrefixPath = "repositories/";
+	private static final String repositoriesSuffixPath = "/images";
 
 	private static final String registryHeaderPath = "X-Docker-Endpoints";
 	private static final String registryTokenPath = "X-Docker-Token";
@@ -102,13 +102,13 @@ public class DockerRegistryClient extends AbstractDockerRegistryClient
 		return getResponse(registry, path, null, secondHeaders, typeReference);
 	}
 
-	@SuppressWarnings("unchecked")
 	@Override
-	public List<String> getImageAncestry(String endpoint, String imageId,
-			String token) throws IOException {
+	public List<String> getImageAncestry(DockerRepositoryContext context,
+			String imageId) throws IOException {
 		String path = ancestryPrefixPath + imageId + ancestrySuffixPath;
-		return getResponse(endpoint, path, null,
-				ImmutableMap.of("Authorization", "Token " + token), List.class);
+		return makeDockerRegistryTwoStepRequest(context, path,
+				new TypeReference<List<String>>() {
+				});
 	}
 
 	private String createBasicAuth(String username, String password) {

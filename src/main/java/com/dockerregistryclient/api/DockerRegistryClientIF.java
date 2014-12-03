@@ -18,9 +18,9 @@ public interface DockerRegistryClientIF {
 			DockerRepositoryContext context, String path,
 			TypeReference<T> typeReference) throws IOException;
 
-	public List<String> getImageAncestry(String endpoint, String imageId,
-			String token) throws IOException;
+	public List<String> getImageAncestry(DockerRepositoryContext context,
+			String imageId) throws IOException;
 
-	InputStream makeDockerRegistryTwoStepRequestForStream(
+	public InputStream makeDockerRegistryTwoStepRequestForStream(
 			DockerRepositoryContext context, String path) throws IOException;
 }
