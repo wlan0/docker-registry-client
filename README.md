@@ -7,8 +7,8 @@ The intention is to make this easy to use. If you have a Java Project which need
 
 ## APIs implemented
 
-All read APIs documented here(https://docs.docker.com/reference/api/registry_api/) are implemented
+All APIs documented here(https://docs.docker.com/reference/api/registry_api/) are implemented
 
-## TBD
+## TO DO
 
-Add support for write and delete
+Test
