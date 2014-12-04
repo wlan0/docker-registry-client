@@ -29,9 +29,24 @@ public interface DockerRegistryClientIF {
 	public InputStream getImageByTag(DockerRepositoryContext context, String tag)
 			throws IOException;
 
-	public DockerRegistryImageInfo getImageJsonById(DockerRepositoryContext context,
-			String id) throws IOException;
+	public DockerRegistryImageInfo getImageJsonById(
+			DockerRepositoryContext context, String id) throws IOException;
 
-	public DockerRegistryImageInfo getImageJsonByTag(DockerRepositoryContext context,
-			String tag) throws IOException;
+	public DockerRegistryImageInfo getImageJsonByTag(
+			DockerRepositoryContext context, String tag) throws IOException;
+
+	public void putImageLayer(DockerRepositoryContext context, String imageId,
+			InputStream imageStream) throws IOException;
+
+	public void putImageLayer(DockerRepositoryContext context, String imageId,
+			DockerRegistryImageInfo imageInfo) throws IOException;
+
+	public void setTagByImageId(DockerRepositoryContext context,
+			String imageId, String tag) throws IOException;
+
+	public void deleteRepositoryTag(DockerRepositoryContext context, String tag)
+			throws IOException;
+
+	public void deleteRepository(DockerRepositoryContext context)
+			throws IOException;
 }
