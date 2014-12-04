@@ -3,8 +3,11 @@ package com.dockerregistryclient.data;
 import java.util.List;
 import java.util.Map;
 
+import org.codehaus.jackson.annotate.JsonCreator;
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class DockerRegistryContainerConfig {
 
 	private final String hostName;
@@ -25,6 +28,7 @@ public class DockerRegistryContainerConfig {
 	private final Map<String, Object> volumes;
 	private final String volumesFrom;
 
+	@JsonCreator
 	public DockerRegistryContainerConfig(
 			@JsonProperty("HostName") String hostName,
 			@JsonProperty("User") String user,
